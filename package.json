@@ -1,0 +1,45 @@
+{
+  "name": "dsh-autostart",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "开机自启动：插件启用时把 DeepSeek Harness 注册到 Windows 登录自启动，禁用时移除。Registers DeepSeek Harness as a Windows logon autostart entry when the plugin is enabled, and removes it when disabled.",
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "dsh-bundle",
+    "cordis",
+    "windows",
+    "autostart",
+    "startup",
+    "开机自启动"
+  ],
+  "license": "MIT",
+  "author": "LLL-lyh0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LLL-lyh0/dsh-autostart.git"
+  },
+  "bugs": {
+    "url": "https://github.com/LLL-lyh0/dsh-autostart/issues"
+  },
+  "homepage": "https://github.com/LLL-lyh0/dsh-autostart#readme",
+  "main": "./index.js",
+  "exports": {
+    ".": "./index.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "index.js",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg",
+    "README.md",
+    "LICENSE"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  }
+}

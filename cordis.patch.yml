@@ -1,0 +1,9 @@
+# 开机自启动插件（Boot Auto-Start）
+#
+# 启用时把 DeepSeek Harness 可执行文件注册到当前用户的 Windows 登录自启动
+# （HKCU\Software\Microsoft\Windows\CurrentVersion\Run），关闭时移除该注册。
+# 切换由 Cordis 的插件启用/停用驱动：启用 → apply() 注册；停用 → 清理函数移除。
+- insert:
+    - id: dsh-autostart
+      name: 'dsh-autostart'
+      config: {}

@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Boot Auto-Start",
+    "description": "Registers DeepSeek Harness in the current user's Windows logon autostart (HKCU Run) when enabled, and removes the entry when disabled."
+  }
+}

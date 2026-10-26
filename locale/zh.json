@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "开机自启动",
+    "description": "启用时把 DeepSeek Harness 注册到当前用户的 Windows 登录自启动项（HKCU Run），禁用时移除该项。"
+  }
+}
