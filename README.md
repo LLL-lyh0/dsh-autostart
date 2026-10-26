@@ -23,18 +23,23 @@ Only the current user's hive (`HKCU`) is touched, so **no administrator privileg
 
 ## Install
 
-### Option A — Plugin Manager (recommended)
+> The npm name `dsh-autostart` is already taken by a different project, so install from this repository (Option A or B). See [Prior art](#prior-art) below.
 
-In dsh, open **插件管理 / Plugin Manager**, install this bundle from GitHub/npm, then enable the `dsh-autostart` row.
+### Option A — Plugin Manager / dshmarket
 
-### Option B — Link the checkout manually
+If your dsh plugin market can install bundles from a Git repository, point it at this repo, then enable the `dsh-autostart` row.
+
+### Option B — Clone and link the checkout
 
 ```bash
-# 1. Add to your profile's package.json (dependencies + dsh.profile.bundles)
-#    "dependencies": { "dsh-autostart": "link:D:/path/to/dsh-autostart" }
-#    "dsh.profile.bundles": [ ... , "dsh-autostart" ]
+# 1. Clone somewhere stable
+git clone https://github.com/LLL-lyh0/dsh-autostart.git
 
-# 2. Link the package into the profile's node_modules
+# 2. Add to your profile's package.json
+#    "dependencies":         { "dsh-autostart": "link:D:/path/to/dsh-autostart" }
+#    "dsh.profile.bundles":  [ ... , "dsh-autostart" ]
+
+# 3. Link the package into the profile's node_modules
 mklink /J "%USERPROFILE%\.dsh\profiles\<profile>\node_modules\dsh-autostart" "D:\path\to\dsh-autostart"
 ```
 
@@ -64,6 +69,10 @@ Note: the autostart entry launches dsh at **Windows logon**, not at dsh restart.
 ## Uninstall
 
 Disable the plugin (or `remove_bundle`), which deletes the registry value. Nothing else is written.
+
+## Prior art
+
+[`dsh-autostart` on npm](https://www.npmjs.com/package/dsh-autostart) ([Ghost011118/dsh-autostart](https://github.com/Ghost011118/dsh-autostart)) is a separate project that solves an adjacent problem: it autostarts **`dsh web`** with a hidden window and a crash-restart supervisor. This plugin instead registers the **desktop app** itself through the standard Windows logon Run key, driven by dsh's own plugin enable/disable, and writes nothing beyond a single `HKCU` value.
 
 ## License
 
